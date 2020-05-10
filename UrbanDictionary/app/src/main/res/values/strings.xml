@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Urban Dictionary</string>
+    <string name="empty_result_message">No Result Found!</string>
+    <string name="action_search">Search</string>
+    <string name="fetch_definitions_failed_message">Fetch Definitions failed. Please try again later</string>
+    <string name="sort">Sort</string>
+    <string name="sort_by">Sort By</string>
+    <string name="likes">Likes</string>
+    <string name="dislikes">Dislikes</string>
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/likes_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_like"
+            app:layout_constraintStart_toEndOf="@id/likes"
+            app:layout_constraintTop_toBottomOf="@id/definition"
+            />
+
+        <ImageView
+            android:id="@+id/dislike_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/ic_dislike"
+            app:layout_constraintBottom_toBottomOf="@id/likes_image"
+            app:layout_constraintEnd_toStartOf="@id/dislikes"
+            app:layout_constraintTop_toTopOf="@id/likes_image"
+            />
+
+        <TextView
+            android:id="@+id/definition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:lineSpacingExtra="4dp"
+            android:text="@{model.definition}"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="The only [proper] [response] to something that makes absolutely [no sense]."
+            />
+
+        <TextView
+            android:id="@+id/dislikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.dislikesCount}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/dislike_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/likes"
+            app:layout_constraintTop_toTopOf="@id/dislike_image"
+            tools:text="1200"
+            />
+
+        <TextView
+            android:id="@+id/likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.likesCount}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/likes_image"
+            app:layout_constraintEnd_toStartOf="@id/dislikes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/likes_image"
+            tools:text="2945"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.ali.android.urbandictionary.features.model.DefinitionItem"
+            />
+    </data>
+</layout>
